@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .primary-btn {
+    @apply bg-primary text-white py-2 rounded-lg py-2 px-6 font-semibold inline-block hover:bg-secondary duration-200 shadow-[0px_10px_8px_-7px_#ffd978]
+    hover:shadow-[0px_10px_8px_-7px_#69a79c];
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { MdMenu } from "react-icons/md";
 
 
 const Navmenu = [
@@ -42,21 +43,29 @@ const Navbar = () => {
         </div>
 
         {/* bagian menu  */}
-        <div className=" lg:block">
+        <div className="hidden md:block lg:flex">
           <ul className='flex gap-3'>
           {
             Navmenu.map((item) => (
               <li key={item.id}>
-                <a href={item.path}>
+                <a href={item.path} className='inline-block py-2 px-3 hover:text-secondary relative group'>
+                  <div className="w-2 h-2 absolute bg-secondary mr-2 left-1/2 -translate-x-1/2 top-1/2 bottom-0 group-hover:block hidden rounded-full">
+              
+                  </div>
                   {item.title}
                 </a>
               </li>
 
             ))}
           </ul>
+            <button className='primary-btn'>sign in</button>
+
         </div>
 
         {/* bagian mobile humberger menu */}
+            <div className="lg:hidden">
+            <MdMenu className='text-4xl'/>
+            </div>
 
       </div>
      
