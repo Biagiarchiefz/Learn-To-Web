@@ -32,12 +32,8 @@ const Hero = () => {
         <div className="flex flex-col justify-center">
           
           <img src={hero} alt="" />
-          <h1>ssa</h1>
-
+        
         </div>
-
- 
-
 
         
       </div>
