@@ -2,6 +2,30 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import hero from "../../assets/hero.png"
+import { animate, delay, easeInOut, motion } from 'framer-motion'
+
+
+export const fadeup = () => {
+  return {
+    initial : {
+      opacity : 0,
+      y : 50,
+    },
+
+    animate : {
+      opacity : 1,
+      y : 0,
+      trasition : {
+        type : "spring",
+        stiffness : 100,
+        duration : 0.5,
+        delay : delay,
+        ease : "easeInOut"
+      }
+    }
+
+  }
+}
 
 const Hero = () => {
   return (
@@ -13,9 +37,13 @@ const Hero = () => {
         {/* text hero */}
         <div className="flex flex-col justify-center py-14 md:py-0  relative z-20">
           <div className="text-center md:text-left space-y-10 lg:max-w-[400px]">
-          <h1 className='text-3xl lg:text-5xl font-bold leading-snug'>Let's Learn to build a <span className='text-secondary'>website </span> 
+          <motion.h1 
+          variants={fadeup(0.6)} 
+          initial="initial"
+          animate= "animate"
+          className='text-3xl lg:text-5xl font-bold leading-snug'>Let's Learn to build a <span className='text-secondary'>website </span> 
           for your bussiness 
-          </h1>
+          </motion.h1>
 
           <div className="flex justify-center md:justify-start">
           <button className='primary-btn flex items-center gap-2 group'>
@@ -31,7 +59,7 @@ const Hero = () => {
         {/* hero image */}
         <div className="flex flex-col justify-center">
           
-          <img src={hero} alt="" />
+          <img src={hero} alt=""className='w-[400px] lg: w-[600px] drop-shadow'/>
         
         </div>
 

@@ -8,3 +8,9 @@
     hover:shadow-[0px_10px_8px_-7px_#69a79c];
   }
 }
+
+@layer utilities {
+  .drop-shadow {
+    filter: drop-shadow(6px 8px 10px rgba(0, 0, 0, 0.5));
+  }
+}
