@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar'
 import { IoIosArrowRoundForward } from "react-icons/io";
 import hero from "../../assets/hero.png"
 import { animate, delay, easeInOut, motion } from 'framer-motion'
+import ban3 from "../../assets/ban3.png"
 
 
 export const Fadeup = (delay) => {
@@ -35,14 +36,14 @@ const Hero = () => {
 
     
         {/* text hero */}
-        <div className="flex flex-col justify-center py-14 md:py-0  relative z-20">
-          <div className="text-center md:text-left space-y-10 lg:max-w-[400px]">
+        <div className="flex flex-col justify-center items-center py-14 md:py-0  relative z-20">
+          <div className="text-center md:text-left space-y-7 lg:max-w-[530px]">
           <motion.h1 
           variants={Fadeup(0.6)} 
           initial="initial"
           animate= "animate"
-          className='text-3xl lg:text-5xl font-bold leading-snug'>Let's Learn to build a <span className='text-secondary'>website </span> 
-          for your bussiness 
+          className='text-3xl lg:text-4xl font-bold !leading-snug'>let's grow and develop together, learn to web <span className='text-secondary'>change </span> 
+           the world
           </motion.h1>
 
           <motion.div
@@ -61,13 +62,13 @@ const Hero = () => {
         </div>
 
         {/* hero image */}
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center items-center">
           
           <motion.img
           initial = {{ x: 50, opacity: 0 }}
           animate = {{ x: 0, opacity: 1 }}
           transition = {{duration: 0.6, delay: 0.4, ease: easeInOut}}
-          src={hero} alt=""className='w-[400px] lg: w-[600px] drop-shadow'/>
+          src={ban3} alt=""className='w-[400px] lg: w-[500px] drop-shadow'/>
         
         </div>
 

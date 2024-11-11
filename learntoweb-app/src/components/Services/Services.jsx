@@ -1,4 +1,4 @@
-import { delay } from "framer-motion";
+import { animate, delay } from "framer-motion";
 import React from "react";
 import { TbWorldWww } from "react-icons/tb";
 import {motion} from 'framer-motion'
@@ -48,6 +48,26 @@ const servicesData = [
   }
 ];
 
+export const sliderhero = (delay) => {
+  return {
+    initial : {
+      opacity : 0,
+      x : 50,
+    },
+    animate: {
+      opacity : 1,
+      x : 0,
+      transition : {
+        duration : 0.3,
+        delay : delay,
+        ease : "easeInOut",
+
+    }
+  }
+}
+}
+
+
 const Services = () => {
   return (
     <section className="bg-white">
@@ -56,16 +76,20 @@ const Services = () => {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8">
           {servicesData.map((item) => (
-            <div className="bg-[#f4f4f4] rounded-2xl flex flex-col justify-center items-center gap-4 p-4 py-7 hover:bg-white hover:shadow-2xl hover:scale-110 duration-300">
+            <motion.div
+            variants={sliderhero(item.delay)}
+            initial="initial"
+            whileInView={"animate"}
+            viewport={{once : true}}
+            className="bg-[#f4f4f4] rounded-2xl flex flex-col justify-center items-center gap-4 p-4 py-7 hover:bg-white hover:shadow-2xl hover:scale-110 duration-300">
 
               <div className="text-4xl mb-4">{item.icons}</div>
 
-              
               <h1 className="text-lg text-center font-semibold px-3 w-[170px]">
                 {item.title}
               </h1>
 
-            </div>
+            </motion.div>
           ))}
 
         </div>
